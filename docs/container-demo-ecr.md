@@ -59,6 +59,7 @@ Demo Repository for PoC (Proof-of-Concepts)
 ## Push Image to Amazon ECR (Elastic Container Registry)
 
 - Create Tags Image
+
   - Example:
 
     ```
@@ -84,24 +85,24 @@ Demo Repository for PoC (Proof-of-Concepts)
     make ecr-tag ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE
     ```
 
- Push Image to **Amazon ECR** with Tags
+## Push Image to **Amazon ECR** with Tags
 
 - Example:
 
-    ```
-    # Alpine
-    docker push $IMAGE:$BASE_IMAGE
-    docker push $IMAGE:latest
-    docker push $IMAGE:alpine-latest
-    docker push $IMAGE:alpine-$ALPINE_VERSION
-    ```
+  ```
+  # Alpine
+  docker push $IMAGE:$BASE_IMAGE
+  docker push $IMAGE:latest
+  docker push $IMAGE:alpine-latest
+  docker push $IMAGE:alpine-$ALPINE_VERSION
+  ```
 
 - With Script:
 
-    ```
-    ./ecr-push.sh ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE $ALPINE_VERSION
+  ```
+  ./ecr-push.sh ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE $ALPINE_VERSION
 
-    -- or --
+  -- or --
 
-    make ecr-push-alpine ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE
-    ```
+  make ecr-push ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE
+  ```
