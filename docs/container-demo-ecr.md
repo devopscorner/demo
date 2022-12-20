@@ -33,6 +33,7 @@ Demo Repository for PoC (Proof-of-Concepts)
 - Set Environment Variable
 
   ```
+  export AWS_ACCOUNT_ID=YOUR_AWS_ACCOUNT_ID
   export ALPINE_VERSION=3.16
   export BASE_IMAGE="alpine"
   export IMAGE="YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo"
@@ -42,18 +43,17 @@ Demo Repository for PoC (Proof-of-Concepts)
 - Execute Build Image
 
   ```
-  # Golang 1.18 - Alpine 3.16
-  docker build -f Dockerfile -t $IMAGE:alpine .
-  docker build -f Dockerfile -t $IMAGE:alpine-3.16 .
+  # Golang 1.19 - Alpine 3.16
+  docker build -f Dockerfile -t $IMAGE:$BASE_IMAGE .
 
   -- or --
 
-  ./ecr-build.sh $(ARGS) Dockerfile CI_PATH=$IMAGE alpine $ALPINE_VERSION
+  ./ecr-build.sh $(ARGS) Dockerfile CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
 
   -- or --
 
   # default: 3.16
-  make ecr-build ARGS=YOUR_AWS_ACCOUNT Dockerfile CI_PATH=$IMAGE alpine $ALPINE_VERSION
+  make ecr-build ARGS=YOUR_AWS_ACCOUNT Dockerfile CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
   ```
 
 ## Push Image to Amazon ECR (Elastic Container Registry)
@@ -63,11 +63,9 @@ Demo Repository for PoC (Proof-of-Concepts)
 
     ```
     # Alpine
-    docker tag YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:latest
-
-    docker tag YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine-latest
-
-    docker tag YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine-3.16
+    docker tag $IMAGE:$BASE_IMAGE $IMAGE:$TAG
+    docker tag $IMAGE:$BASE_IMAGE $IMAGE:alpine-$TAG
+    docker tag $IMAGE:$BASE_IMAGE $IMAGE:alpine-$ALPINE_VERSION
     ```
 
   - With Script:
@@ -79,7 +77,7 @@ Demo Repository for PoC (Proof-of-Concepts)
     -- or --
 
     # default: 3.16
-    ./ecr-tag.sh ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE alpine $ALPINE_VERSION
+    ./ecr-tag.sh ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
 
     -- or --
 
@@ -92,11 +90,10 @@ Demo Repository for PoC (Proof-of-Concepts)
 
     ```
     # Alpine
-    docker push YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine
-
-    docker push YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine-latest
-
-    docker push YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo:alpine-3.16
+    docker push $IMAGE:$BASE_IMAGE
+    docker push $IMAGE:latest
+    docker push $IMAGE:alpine-latest
+    docker push $IMAGE:alpine-$ALPINE_VERSION
     ```
 
 - With Script:
