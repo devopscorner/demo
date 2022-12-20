@@ -37,6 +37,11 @@ Demo Repository for PoC (Proof-of-Concepts)
 - Terraform Cli (`terraform`)
 - Terraform Environment (`tfenv`)
 
+## Documentation
+
+- Index Documentation, go to [this](docs/README.md) link
+- Build, Tag & Push container image to **Amazon ECR (Elastic Container Registry)**, go to [this](docs/container-bookstore-ecr.md) link
+
 ## Terraform Features
 
 Multi Environment Workspace:
