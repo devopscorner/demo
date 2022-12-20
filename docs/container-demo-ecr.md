@@ -36,7 +36,7 @@ Demo Repository for PoC (Proof-of-Concepts)
   export AWS_ACCOUNT_ID=YOUR_AWS_ACCOUNT_ID
   export ALPINE_VERSION=3.16
   export BASE_IMAGE="alpine"
-  export IMAGE="YOUR_AWS_ACCOUNT.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo"
+  export IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/devopscorner/demo"
   export TAG="latest"
   ```
 
@@ -53,7 +53,7 @@ Demo Repository for PoC (Proof-of-Concepts)
   -- or --
 
   # default: 3.16
-  make ecr-build ARGS=YOUR_AWS_ACCOUNT Dockerfile CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
+  make ecr-build ARGS=$AWS_ACCOUNT_ID Dockerfile CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
   ```
 
 ## Push Image to Amazon ECR (Elastic Container Registry)
@@ -78,11 +78,11 @@ Demo Repository for PoC (Proof-of-Concepts)
     -- or --
 
     # default: 3.16
-    ./ecr-tag.sh ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
+    ./ecr-tag.sh ARGS=$AWS_ACCOUNT_ID CI_PATH=$IMAGE $BASE_IMAGE $ALPINE_VERSION
 
     -- or --
 
-    make ecr-tag ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE
+    make ecr-tag ARGS=$AWS_ACCOUNT_ID CI_PATH=$IMAGE
     ```
 
 ## Push Image to **Amazon ECR** with Tags
@@ -100,9 +100,9 @@ Demo Repository for PoC (Proof-of-Concepts)
 - With Script:
 
   ```
-  ./ecr-push.sh ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE $ALPINE_VERSION
+  ./ecr-push.sh ARGS=$AWS_ACCOUNT_ID CI_PATH=$IMAGE $ALPINE_VERSION
 
   -- or --
 
-  make ecr-push ARGS=YOUR_AWS_ACCOUNT CI_PATH=$IMAGE
+  make ecr-push ARGS=$AWS_ACCOUNT_ID CI_PATH=$IMAGE
   ```
