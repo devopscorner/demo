@@ -233,7 +233,13 @@ View the status of your application by using the following commands.
   ```
 
 - List available commands and options.
+
   ```
   copilot --help
   copilot init --help
+  ```
+
+- Cleanup Environment
+  ```
+  copilot app delete
   ```
