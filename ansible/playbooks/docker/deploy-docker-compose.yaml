@@ -1,0 +1,8 @@
+---
+- name: Install Docker & Docker Compose
+  hosts: "{{ deploy_hosts }}"
+  remote_user: "{{ remote_user | default('ec2-user') }}"
+  become: yes
+
+  roles:
+    - docker-compose

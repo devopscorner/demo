@@ -1,0 +1,22 @@
+---
+- name: Create Docker Volume Directories
+  file:
+    path: "{{ item }}"
+    state: "directory"
+    owner: "root"
+    group: "root"
+    mode: "0755"
+  loop:
+    - "/opt/data/docker/portainer2.9"
+    - "/opt/data/docker/go-demo"
+
+- name: Copy docker-compose.yml
+  ansible.builtin.copy:
+    src: docker-compose.yml
+    dest: /tmp/docker-compose.yml
+    owner: "root"
+    group: "root"
+    mode: u=rw,g=r,o=r
+
+- name: Run docker-compose
+  ansible.builtin.shell: cd /tmp && docker-compose -p mydemo -f docker-compose.yml up -d

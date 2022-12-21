@@ -163,7 +163,7 @@ Demo Repository for PoC (Proof-of-Concepts)
         -e "deploy_hosts=docker-golang-dev" \
         -e "env=staging" \
         -e "remote_user=ec2-user" \
-        --private-key=/opt/keyserver/devopscorner-staging.pem \
+        --private-key=/opt/keyserver/devopscorner/devopscorner-staging.pem \
         -K -vv
   ```
 
@@ -172,10 +172,18 @@ Demo Repository for PoC (Proof-of-Concepts)
 - Ansible GOLANG-DEMO Container (Staging)
 
   ```
-  ansible-playbook -i services/demo/ansible/inventory/staging/group_vars/inventory.ini playbooks/golang/service-golang-container-demo.yaml \
+  ansible-playbook -i services/demo/ansible/inventory/staging/group_vars/inventory.ini playbooks/docker/deploy-docker-compose.yaml \
         -e "deploy_hosts=docker-golang-dev" \
         -e "env=staging" \
         -e "remote_user=ec2-user" \
-        --private-key=/opt/keyserver/devopscorner-staging.pem \
+        --private-key=/opt/keyserver/devopscorner/devopscorner-staging.pem \
+        -K -vv
+  ```
+
+  ```
+   ansible-playbook -i services/demo/ansible/inventory/staging/group_vars/inventory.ini playbooks/docker/deploy-docker-compose.yaml \
+        -e "deploy_hosts=docker-golang-dev" \
+        -e "env=staging" \
+        -e "remote_user=ec2-user" \
         -K -vv
   ```
