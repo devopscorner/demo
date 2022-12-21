@@ -100,15 +100,29 @@ Demo Repository for PoC (Proof-of-Concepts)
 
 - Command Run (Single Line)
 
-  ```
-  cd demo &&                            \
-    copilot init --app demo             \
-    --name api                          \
-    --type 'Load Balanced Web Service'  \
-    --dockerfile './Dockerfile'         \
-    --port 80                           \
-    --deploy
-  ```
+  - From `Dockerfile`
+
+    ```
+    cd demo &&                            \
+        copilot init --app demo             \
+        --name api                          \
+        --type 'Load Balanced Web Service'  \
+        --dockerfile './Dockerfile'         \
+        --port 8080                         \
+        --deploy
+    ```
+
+  - From existing Images
+
+    ```
+    cd demo &&                            \
+        copilot init --app demo             \
+        --name api                          \
+        --type 'Load Balanced Web Service'  \
+        --image 'devopscorner/demo:latest'  \
+        --port 8080                         \
+        --deploy
+    ```
 
 - Interactive Mode
 
@@ -162,7 +176,7 @@ Demo Repository for PoC (Proof-of-Concepts)
     Which port do you want customer traffic sent to? [? for help] (80)
     ```
 
-    Enter `80` or accept default.
+    Enter `8080` or accept default.
 
   - You will see a log showing the application resources being created.
 
