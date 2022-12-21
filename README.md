@@ -21,11 +21,11 @@ Demo Repository for PoC (Proof-of-Concepts)
 
 ### Alpine
 
-| Image name | Size |
-|------------|------|
-| `devopscorner/demo:alpine` | [![docker image size](https://img.shields.io/docker/image-size/devopscorner/demo/alpine.svg?label=Image%20size&logo=docker)](https://hub.docker.com/repository/docker/devopscorner/demo/tags?page=1&ordering=last_updated&name=alpine) |
+| Image name                        | Size                                                                                                                                                                                                                                                 |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `devopscorner/demo:alpine`        | [![docker image size](https://img.shields.io/docker/image-size/devopscorner/demo/alpine.svg?label=Image%20size&logo=docker)](https://hub.docker.com/repository/docker/devopscorner/demo/tags?page=1&ordering=last_updated&name=alpine)               |
 | `devopscorner/demo:alpine-latest` | [![docker image size](https://img.shields.io/docker/image-size/devopscorner/demo/alpine-latest.svg?label=Image%20size&logo=docker)](https://hub.docker.com/repository/docker/devopscorner/demo/tags?page=1&ordering=last_updated&name=alpine-latest) |
-| `devopscorner/demo:alpine-3.16` | [![docker image size](https://img.shields.io/docker/image-size/devopscorner/demo/alpine-3.16.svg?label=Image%20size&logo=docker)](https://hub.docker.com/repository/docker/devopscorner/demo/tags?page=1&ordering=last_updated&name=alpine-3.16) |
+| `devopscorner/demo:alpine-3.16`   | [![docker image size](https://img.shields.io/docker/image-size/devopscorner/demo/alpine-3.16.svg?label=Image%20size&logo=docker)](https://hub.docker.com/repository/docker/devopscorner/demo/tags?page=1&ordering=last_updated&name=alpine-3.16)     |
 
 ---
 
@@ -41,6 +41,8 @@ Demo Repository for PoC (Proof-of-Concepts)
 
 - Index Documentation, go to [this](docs/README.md) link
 - Build, Tag & Push container image to **Amazon ECR (Elastic Container Registry)**, go to [this](docs/container-demo-ecr.md) link
+- Running DEMO, go to [this](docs/container-demo-run.md) link
+- Deploy Amazon Elastic Container Service (ECS) with AWS Copilot, detail [here](docs/container-deploy-copilot.md)
 
 ## Terraform Features
 
@@ -49,6 +51,7 @@ Multi Environment Workspace:
 - Remote State Terraform (S3 & DynamoDB)
 
 - Core Infrastructure
+
   - VPC
   - Subnet EC2
   - Security Group
