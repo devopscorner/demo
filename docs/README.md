@@ -16,14 +16,10 @@ Demo Repository for PoC (Proof-of-Concepts)
 
 ---
 
----
-
 ## INDEX
 
-- Build Container `devopscorner/demo`
-
-  - Build Container `devopscorner/demo` for ECR, detail [here](container-demo-ecr.md)
-
-- Running DEMO, detail [here](container-demo-run.md)
-
-- Deploy Amazon Elastic Container Service (ECS), detail [here](container-demo-ecs-copilot.md)
+- Build, Tag & Push container `devopscorner/demo` image to **Amazon ECR (Elastic Container Registry)**, go to [this](docs/container-demo-ecr.md) link
+- Running DEMO, go to [this](container-demo-run.md) link
+- Deploy with Docker CLI & Docker-Compose, detail [here](deploy-docker-compose.md)
+- Deploy with Ansible detail [here](deploy-ansible.md)
+- Deploy Amazon Elastic Container Service (ECS) with AWS Copilot, detail [here](deploy-ecs-copilot.md)
