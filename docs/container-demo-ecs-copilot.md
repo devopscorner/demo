@@ -1,4 +1,4 @@
-# DevOpsCorner Demo
+# DevOpsCorner Demo - AWS Copilot Deployment
 
 Demo Repository for PoC (Proof-of-Concepts)
 
@@ -253,7 +253,23 @@ View the status of your application by using the following commands.
   copilot init --help
   ```
 
-- Cleanup Environment
-  ```
-  copilot app delete
-  ```
+### Cleanup Environment
+
+```
+copilot app delete
+```
+
+### Update Existing Stack Deployment
+
+```
+copilot svc delete --name [old_service_name]
+copilot svc init --name [new_service_name]
+
+## Redeploy
+copilot pipeline deploy
+---
+eg:
+copilot svc init --name demo
+copilot svc init --name demo-new
+copilot pipeline deploy
+```

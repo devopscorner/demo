@@ -1,4 +1,4 @@
-# DevOpsCorner Demo
+# DevOpsCorner Demo - Running Application
 
 Demo Repository for PoC (Proof-of-Concepts)
 
