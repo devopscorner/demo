@@ -26,4 +26,4 @@ Demo Repository for PoC (Proof-of-Concepts)
 
 - Running DEMO, detail [here](container-demo-run.md)
 
-- Deploy Amazon Elastic Container Service (ECS), detail [here](container-deploy-copilot.md)
+- Deploy Amazon Elastic Container Service (ECS), detail [here](container-demo-ecs-copilot.md)

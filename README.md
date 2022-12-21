@@ -42,7 +42,7 @@ Demo Repository for PoC (Proof-of-Concepts)
 - Index Documentation, go to [this](docs/README.md) link
 - Build, Tag & Push container image to **Amazon ECR (Elastic Container Registry)**, go to [this](docs/container-demo-ecr.md) link
 - Running DEMO, go to [this](docs/container-demo-run.md) link
-- Deploy Amazon Elastic Container Service (ECS) with AWS Copilot, detail [here](docs/container-deploy-copilot.md)
+- Deploy Amazon Elastic Container Service (ECS) with AWS Copilot, detail [here](docs/container-demo-ecs-copilot.md)
 
 ## Terraform Features
 
