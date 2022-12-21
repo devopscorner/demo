@@ -139,6 +139,16 @@ Demo Repository for PoC (Proof-of-Concepts)
    cd ansible && ansible-galaxy install -r roles/requirements.yml
    ```
 
+## Install Docker & Docker-Compose
+
+```
+ansible-playbook -i services/demo/ansible/inventory/staging/group_vars/inventory.ini playbooks/docker/service-docker.yaml \
+   -e "deploy_hosts=docker-golang-dev" \
+   -e "env=staging" \
+   -e "remote_user=ec2-user" \
+   -K -vv
+```
+
 ## Deploy by Services
 
 ### Multi Tags Deployment
@@ -181,7 +191,7 @@ Demo Repository for PoC (Proof-of-Concepts)
   ```
 
   ```
-   ansible-playbook -i services/demo/ansible/inventory/staging/group_vars/inventory.ini playbooks/docker/deploy-docker-compose.yaml \
+  ansible-playbook -i services/demo/ansible/inventory/staging/group_vars/inventory.ini playbooks/docker/deploy-docker-compose.yaml \
         -e "deploy_hosts=docker-golang-dev" \
         -e "env=staging" \
         -e "remote_user=ec2-user" \
